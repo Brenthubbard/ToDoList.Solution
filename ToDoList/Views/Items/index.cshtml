@@ -1,25 +1,3 @@
-@{
-  Layout = "_Layout";
-}
-
-@using ToDoList.Models;
-@model List<ToDoList.Models.Item>;
-
-<h1>Items</h1>
-
-@if (@Model.Count == 0)
-{
-  <h3>No items have been added yet!</h3>
-} 
-
-@foreach (Item item in Model)
-{
-  <li>@Html.ActionLink($"{item.Description}", "Details", new { id = item.ItemId }) | @item.Category.Name</li>
-}
-
-<p>@Html.ActionLink("Add new item", "Create")</p>
-
-
 @* @{
   Layout = "_Layout";
 }
@@ -41,56 +19,5 @@
 
 <p>@Html.ActionLink("Add new item", "Create")</p>
 
-<p>@Html.ActionLink("Home", "Index", "Home")</p> *@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@* @using ToDoList.Models;
-
-@{
-  Layout = "_Layout";
-}
-
-
-<div class="container-fluid">
-  <h1>ToDo List</h1>
-  @if (Model.Count == 0)
-  {
-    <p>There are no items in the list.</p>
-  }
-  else
-  {
-    <ul>
-      @foreach (Item item in Model)
-      {
-        <li><a href='/items/@item.Id'>@item.Description</a></li>
-      }
-    </ul>
-  }
-
-  <a href="/items/new">Add a new item.</a>
-
-  <form action="/items/delete" method="post">
-    <button type="submit" name="button">Clear All Items</button>
-  </form>
-</div> *@
-
-
+ *@
