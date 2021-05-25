@@ -10,3 +10,14 @@
     <p>@Html.ActionLink("Edit Category", "Edit", new { id = Model.CategoryId })</p>
     <p>@Html.ActionLink("Delete Category", "Delete", new { id = Model.CategoryId })</p>
     <p>@Html.ActionLink("Back to list", "Index")</p>
+    <ul>
+  @foreach(var join in Model.Categories)
+  {
+    <li>@join.Category.Name</li>
+    @using (Html.BeginForm("DeleteCategory", "Items"))
+    {
+      @Html.Hidden("joinId", @join.CategoryItemId)
+      <input type="submit" value="Delete"/>
+    }
+  }
+  </ul>
